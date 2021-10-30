@@ -1,0 +1,26 @@
+[
+    {
+        "price": 21000,
+        "id": 1,
+        "name":"Jordan Air Dior",
+        "image":"images/jordan-01.jpg"
+    },
+    {
+        "price": 20750,
+        "id": 2,
+        "name":"Jordan Retro 4 Off White",
+        "image":"images/jordan-02.jpg"
+    },
+    {
+        "price": 54280,
+        "id": 3,
+        "name":"Jordan Retro 4 Blue Univercity",
+        "image":"images/jordan-03.jpg"
+    },
+    {
+        "price": 42600,
+        "id": 4,
+        "name":"Jordan Retro 4 PSG",
+        "image":"images/jordan-04.jpg"
+    }
+]

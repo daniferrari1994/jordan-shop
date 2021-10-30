@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Jordan shop</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <!-- NAVEGADOR -->
+
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div>
+                    <img src="" class="d-inline-block align-text-top">
+                    <h1>JORDAN SHOP</h1>
+                </div>
+                <!-- Button trigger modal -->
+                <div>
+                    <p id="feedback"></p>
+                </div>
+            </div>
+
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4" id="tabla-carrito">
+                    <table class="table table-dark table-striped"">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Accion</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="items"></tbody>
+                        <tfoot>
+                            <tr id="footer">
+                                <th scope="row" colspan="4">Carrito vacio - ¡Comienza a comprar!</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <template id="template-footer">
+                        <th scope="row" colspan="2">Total productos</th>
+                        <td>10</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm" id="vaciar-carrito">vaciar todo</button>
+                                <!-- Button trigger modal -->
+                            <button type="button" id="realizar-compra" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Realizar compra</button>
+                        </td>
+                        <td class="font-weight-bold">$ <span>5000</span></td>
+                    </template>
+                
+                    <template id="template-carrito">
+                        <tr>
+                            <th scope="row">id</th>
+                            <td>b550-f am4</td>
+                            <td>1</td>
+                            <td>
+                                <button class="btn btn-info btn-sm">+</button>
+                                <button class="btn btn-danger btn-sm">-</button>
+                            </td>
+                            <td>$ <span>500</span></td>
+                        </tr>
+                    </template>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span id="btnCart"><i class="bi bi-cart2"></i></span>
+                </button>
+            </div>
+          </nav>
+
+    </header>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Compra realizada con exito!</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Muchas gracias por comprar en nuestro sitio!<br>
+                    Esperamos que lo disfrutes y vuelvas a visitarnos</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUERPO DE PAGINA -->
+
+    <div id="bienvenida">
+
+        <div>
+            <h2>Bienvenido</h2>
+            <form>
+                <input placeholder="Ingresa tu nombre" type="text" name="firstName" id="nombre"></label>
+                <input placeholder="Ingresa tu apellido" type="text" name="lastName" id="apellido"></label>
+                <input type="button" value="Enviar" id="enviar" class="btn btn-primary">
+            </form>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="row" id="cards"></div>
+    </div>
+
+    <template id="template-card">
+        <div class="col-12 mb-2 col-md-4">
+            <div class="cards">
+                <img src="" class="card-img-top">
+                <div class="card-body">
+                    <h5>titulo</h5>
+                    <p>precio</p>
+                    <button class="btn btn-dark">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- PIE DE PAGINA-->
+
+    <footer class="bg-dark">
+
+        <h6>Powered by Dan Ferrari</h6>
+
+        <div>
+            <a href="https://github.com/daniferrari1994"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/dan-ferrari/"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/daniferrari1994/"><i class="bi bi-instagram"></i></a>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
